@@ -1,5 +1,7 @@
 # NBPSimpleApp
 
+Aplikacja przedstawia interfejs pozwalający użytkownikowi na odczytanie danych z tabeli notowań giełdowych, takich jak: nazwa waluty, jej skrócony zapis oraz wartość rynkową. Po drugiej stronie interfejsu dostępny jest krótki formularz pozwalający na przekonwertowanie waluty z jednej na drugą na podstawie kursu walut z aktualnie wybranego dnia z kalendarza.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
 
 ## Development server
