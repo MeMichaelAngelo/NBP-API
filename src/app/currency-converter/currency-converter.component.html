@@ -1,0 +1,68 @@
+<form *ngIf="currencyRatesDataValidation()" [formGroup]="form">
+  <div class="center-control">
+    <div class="header" aria-label="Currency converter">
+      Simple currency converter
+    </div>
+    <div class="input-with-validation-area">
+      <input
+        name="inputCurrency"
+        type="number"
+        formControlName="inputCurrency"
+        aria-label="Enter currency"
+        placeholder="Enter currency to convert"
+      />
+      <div
+        class="error-message"
+        *ngIf="
+          !form.get('inputCurrency')?.value &&
+          form.get('inputCurrency')?.touched
+        "
+      >
+        Enter correctly value
+      </div>
+    </div>
+  </div>
+
+  <div class="center-control" *ngIf="currencyRatesDataValidation()">
+    <label for="firstCombo">Starting currency</label>
+    <select
+      name="firstCombo"
+      formControlName="firstCombo"
+      #firstCombo
+      aria-label="Starting currency code"
+    >
+      <option
+        *ngFor="
+          let currency of currencyRatesData[0].rates;
+          trackBy: trackByCurrency
+        "
+        [value]="currency?.code"
+      >
+        {{ currency?.code }}
+      </option>
+    </select>
+  </div>
+  <div class="center-control">
+    <label for="secondCombo">Target currency</label>
+    <select
+      *ngIf="currencyRatesDataValidation()"
+      name="secondCombo"
+      formControlName="secondCombo"
+      #secondCombo
+      aria-label="Target currency code"
+    >
+      <option
+        *ngFor="
+          let currency of currencyRatesData[0].rates;
+          trackBy: trackByCurrencyCode
+        "
+        [value]="currency?.code"
+      >
+        {{ currency?.code }}
+      </option>
+    </select>
+  </div>
+  <div class="convert-currency-result" aria-label="Currency result">
+    {{ convertCurrency() | number : "1.2-2" }}
+  </div>
+</form>

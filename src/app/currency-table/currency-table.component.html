@@ -1,0 +1,34 @@
+<div tabindex="0" *ngIf="currencyRatesDataValidation()">
+  <table>
+    <thead class="header-color">
+      <tr>
+        <th class="cell">Currency</th>
+        <th class="cell lock-width">Code</th>
+        <th class="cell lock-width">Mid</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="
+          let result of currencyData[0]?.rates;
+          let odd = odd;
+          trackBy: trackByCurrency
+        "
+        [class.even-row]="odd"
+      >
+        <td class="cell">
+          {{
+            convertPolishChars(result.currency || result.country) ||
+              "No currency"
+          }}
+        </td>
+        <td class="cell lock-width">
+          {{ result?.code || "No code" }}
+        </td>
+        <td class="cell lock-width">
+          {{ result?.mid || "No mid" }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

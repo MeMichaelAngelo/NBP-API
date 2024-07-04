@@ -1,0 +1,46 @@
+.header-color {
+  background-color: #ff9466;
+}
+
+table {
+  width: 100%;
+}
+
+.cell {
+  font-size: 32px;
+  border: #20293a 1px solid;
+  padding: 12px;
+  max-width: 150px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  @media screen and (max-width: 480px) {
+    font-size: 32px;
+    padding: 4px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 140px;
+  }
+}
+
+.lock-width {
+  min-width: auto;
+  max-width: 150px;
+}
+
+.even-row {
+  background-color: #ffb798;
+}
+
+.no-data {
+  width: 86%;
+  height: calc(100vh - 20px);
+  font-size: 60px;
+  text-align: center;
+  align-content: center;
+  line-height: 75px;
+
+  @media screen and (max-width: 480px) {
+    align-self: center;
+  }
+}

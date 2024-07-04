@@ -1,0 +1,77 @@
+.center-control {
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 40px;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1.5px;
+
+  @media screen and (max-width: 480px) {
+    margin-top: 64px;
+  }
+}
+
+form input {
+  font-size: 30px;
+  border-radius: 12px;
+  text-align: center;
+  height: 50px;
+  width: 70%;
+  font-family: "digital-7";
+  letter-spacing: 1.5px;
+
+  @media screen and (max-width: 480px) {
+    margin: auto;
+  }
+}
+
+label {
+  font-size: 32px;
+  padding-right: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+select {
+  font-family: "digital-7";
+  font-size: 32px;
+  border-radius: 12px;
+  text-align: center;
+  width: 100px;
+  height: 40px;
+  margin-bottom: 40px;
+}
+
+.input-with-validation-area {
+  margin-bottom: 40px;
+}
+
+.error-message {
+  color: red;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.convert-currency-result {
+  font-size: 48px;
+  text-align: center;
+
+  @media screen and (max-width: 480px) {
+    margin-bottom: 40px;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
