@@ -25,9 +25,9 @@ export class CurrencyTableComponent {
   }
 
   currencyRatesDataValidation(): boolean {
-    const shortenedValidation =
+    const shortenedCurrencyDataValidation =
       this.currencyData?.length > 0 &&
       this.currencyData?.[0]?.rates?.length > 0;
-    return shortenedValidation;
+    return shortenedCurrencyDataValidation;
   }
 }
