@@ -141,4 +141,18 @@ describe('AppComponent', () => {
 
     expect(component.maxDate).toBe(expectedDate);
   });
+
+  it('should return values from server', () => {
+    const exampleDataLength = exampleData?.length > 0;
+    const exampleDataRatesLength = exampleData?.[0]?.rates?.length > 0;
+
+    expect(exampleDataLength).toBe(true);
+    expect(exampleDataRatesLength).toBe(true);
+  });
+
+  it('should return empty array from server', () => {
+    const currencyRatesData = (component.currencyRatesData = []);
+    const exampleDataLength = currencyRatesData?.length > 0;
+    expect(exampleDataLength).toBe(false);
+  });
 });
