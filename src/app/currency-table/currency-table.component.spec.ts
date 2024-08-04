@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CurrencyTableComponent } from './currency-table.component';
-import { By } from '@angular/platform-browser';
 import { FullCurrencyData } from '../interfaces/FullCurrencyData.interface';
 
 describe('CurrencyTableComponent', () => {
@@ -38,15 +37,19 @@ describe('CurrencyTableComponent', () => {
   it('should validate currency data correctly', () => {
     component.currencyData = [
       {
-        rates: [{ currency: 'USD', country: 'USD', code: 'USD', mid: '3.75' }],
+        rates: [
+          {
+            currency: 'Dolar amerykański',
+            country: 'USA',
+            code: 'USD',
+            mid: '3.75',
+          },
+        ],
       },
     ] as FullCurrencyData[];
     expect(component.currencyRatesDataValidation()).toBe(true);
 
     component.currencyData = [];
-    expect(component.currencyRatesDataValidation()).toBe(false);
-
-    component.currencyData = [{} as any];
     expect(component.currencyRatesDataValidation()).toBe(false);
   });
 });

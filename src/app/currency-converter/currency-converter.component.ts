@@ -24,14 +24,14 @@ export class CurrencyConverterComponent implements OnInit {
   }
 
   currencyRatesDataValidation(): boolean {
-    const shortenedValidation =
+    const shortenedCurrencyRatesDataValidation =
       this.currencyRatesData?.length > 0 &&
       this.currencyRatesData?.[0]?.rates?.length > 0;
-    return shortenedValidation;
+    return shortenedCurrencyRatesDataValidation;
   }
 
   convertCurrency(): number {
-    if (!this.currencyRatesData) return 0;
+    if (!this.currencyRatesData || !this.currencyRatesData.length) return 0;
 
     const firstComboValue = this.currencyRatesData[0].rates.find(
       (el: CurrencyDetails) => el.code === this.form.get('firstCombo')?.value
