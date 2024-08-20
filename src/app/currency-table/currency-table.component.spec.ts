@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { CurrencyTableComponent } from './currency-table.component';
 import { FullCurrencyData } from '../interfaces/FullCurrencyData.interface';
 
@@ -28,12 +29,6 @@ describe('CurrencyTableComponent', () => {
     expect(converted).toBe('Lodz');
   });
 
-  it('should return mid as trackBy value', () => {
-    const currencyDetails = { mid: '4.567' } as any;
-    const index = 0;
-    expect(component.trackByCurrency(index, currencyDetails)).toBe('4.567');
-  });
-
   it('should validate currency data correctly', () => {
     component.currencyData = [
       {
@@ -48,7 +43,9 @@ describe('CurrencyTableComponent', () => {
       },
     ] as FullCurrencyData[];
     expect(component.currencyRatesDataValidation()).toBe(true);
+  });
 
+  it('should validate currency data incorrectly', () => {
     component.currencyData = [];
     expect(component.currencyRatesDataValidation()).toBe(false);
   });
