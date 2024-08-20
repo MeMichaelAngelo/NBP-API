@@ -1,7 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
+
 import { CurrencyConverterComponent } from './currency-converter.component';
 import { FullCurrencyData } from '../interfaces/FullCurrencyData.interface';
-import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
 
 describe('CurrencyConverterComponent', () => {
   let component: CurrencyConverterComponent;

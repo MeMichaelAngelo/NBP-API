@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {
   HttpClientTestingModule,
   HttpTestingController,
 } from '@angular/common/http/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NBPApiService } from './services/nbpapi.service';
-import { of, throwError } from 'rxjs';
-import { FullCurrencyData } from './interfaces/FullCurrencyData.interface';
-import { CurrencyTableComponent } from './currency-table/currency-table.component';
 
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { environment } from './environment/environment';
+import { NBPApiService } from './services/nbpapi.service';
+
+import { of, throwError } from 'rxjs';
+
+import { AppComponent } from './app.component';
+import { CurrencyTableComponent } from './currency-table/currency-table.component';
+import { FullCurrencyData } from './interfaces/FullCurrencyData.interface';
 
 describe('AppComponent', () => {
   let component: AppComponent;
